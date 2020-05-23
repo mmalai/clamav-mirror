@@ -1,4 +1,4 @@
-PACKAGE_ROOT = github.com/dekobon
+PACKAGE_ROOT = github.com/mmalai
 PACKAGE      = $(PACKAGE_ROOT)/clamav-mirror
 DATE        ?= $(shell date -u +%FT%T%z)
 VERSION     ?= $(shell cat $(CURDIR)/.version 2> /dev/null || echo unknown)

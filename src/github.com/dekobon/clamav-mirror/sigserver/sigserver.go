@@ -92,7 +92,13 @@ func scheduleUpdates(config Config) error {
 
 func validFileRequested(path string, file string) bool {
 	dir := filepath.Dir(path)
-	validFileExtension := (strings.HasSuffix(file, ".cvd") || strings.HasSuffix(file, ".cdiff")) &&
+	validFileExtension := (strings.HasSuffix(file, ".cvd")
+	|| strings.HasSuffix(file, ".cdiff") || strings.HasSuffix(file, ".cdb")
+	|| strings.HasSuffix(file, ".db") || strings.HasSuffix(file, ".fp")
+	|| strings.HasSuffix(file, ".ftm") || strings.HasSuffix(file, ".hdb")
+	|| strings.HasSuffix(file, ".hsb") || strings.HasSuffix(file, ".ign2")
+	|| strings.HasSuffix(file, ".ldb") || strings.HasSuffix(file, ".ndb")
+	|| strings.HasSuffix(file, ".yara")) &&
 		!strings.Contains(file, "..")
 	validDir := dir == "/"
 	// CVD or cdiff filenames should never be very big
